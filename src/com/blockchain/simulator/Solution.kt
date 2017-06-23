@@ -1,7 +1,7 @@
 package com.blockchain.simulator
 
-import com.blockchain.simulator.domain.Block
+import org.apache.commons.codec.digest.DigestUtils
 
 fun main(args: Array<String>) {
-    println(Block.GENESIS_BLOCK)
+    println(DigestUtils.sha256Hex("0"))
 }
