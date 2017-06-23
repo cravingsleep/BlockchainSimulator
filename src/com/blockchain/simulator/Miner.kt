@@ -25,8 +25,6 @@ data class Miner(val address: String, val blockChain: List<Block> = listOf(Block
                                         nonce.toString(),
                                         amendedTransactions)
 
-            println(attemptedBlock.hash().toByteArray(Charsets.UTF_8).size)
-
             BigInteger(attemptedBlock.hash(), 16) < BigInteger(Rules.difficultyHash(difficulty), 16)
         }
 
