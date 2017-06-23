@@ -1,7 +1,11 @@
 package com.blockchain.simulator
 
-import org.apache.commons.codec.digest.DigestUtils
+import com.blockchain.simulator.domain.Transaction
+import java.util.*
 
 fun main(args: Array<String>) {
-    println(DigestUtils.sha256Hex("0"))
+    val singleMiner = Miner(UUID.randomUUID().toString())
+    val nextBlock = singleMiner.findNextBlock(emptyList<Transaction>())
+
+    nextBlock.blockChain.forEach { println(it) }
 }
