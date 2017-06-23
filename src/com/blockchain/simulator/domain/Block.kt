@@ -11,9 +11,3 @@ data class Block(val height: Int, val difficulty: Int, val previousBlockHash: St
             DigestUtils.sha256Hex(height.toString() + difficulty.toString() +
                     previousBlockHash + nonce + transactions.toString())
 }
-
-/*
-A difficulty of 1 represents the fact that the miner has to find a nonce which produces a hash such that:
-
-sha256(previousBlockHash + nonce) < 0x1FFFFFFFF...
- */
